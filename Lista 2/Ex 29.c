@@ -1,8 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<time.h>
 
 int main(){
     int i, a, b, r, x, acertos=0, a1, a2, a3, a4, a5, b1, b2, b3, b4, b5, r1, r2, r3, r4 ,r5;
+    srand(time(NULL));
     for(i=0; i<5; i++){
         a=1 + rand()%100; //rand()%100 gera valores entre 0 e 99, corrige com o +1
         b=1 + rand()%100;
