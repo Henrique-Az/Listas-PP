@@ -2,23 +2,26 @@
 #include<math.h>
 
 int main(){
-    long i, c, d;
-    float a;
-    double s=-1;
-    for(i=1; i<=2000000; i++){
-        d=0;
-        a=sqrt(i);
-        for(c=1; c<=a; c++){ /*Um número sempre tem um número par de divisores, o fator (n-1), do par de divisores da forma (n-1)(n+1), 
-        é o máximo que um número pode chegar sem ter aparecido nenhum divisor anterior a ele, por isso, 
-        como esse fator é menor do que a raiz do número, é permitido essa optimização*/
-            if(i%c==0){
-                d++;
+    int x, i, p=1;
+    float r;
+    double s=0;
+    for(x=0; x<=2000000; x++){
+        p=1;
+        r=sqrt(x); //Só precisa checar até a raiz, máximo par de divisor é da forma n²
+        if((x%2==0 && x!=2) || x==1){ //Arruma o fato de que ele não checa se é divisível por 2 e atribui 1 como não primo
+            p=0;
+        }else{
+            for(i=3; i<=r; i+=2){ //Incrementa de 2 em 2
+                if(x%i==0){
+                    p=0;
+                    break;
+                }
             }
         }
-        if(d==1){ //Como eu não estou checando se o número é divisível por ele mesmo, um primo tem que ter 1 divisor
-            s+=i; //Problema dessa implementação é que, para o programa, 1 se torna primo, por isso foi definido que s=-1
-        }    
+            if(p){
+            s+=x;
+        }
     }
-    printf("%.f", s);
+    printf("%.lf\n", s);
     return 0;
 }
