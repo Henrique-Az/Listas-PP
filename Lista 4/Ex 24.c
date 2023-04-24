@@ -9,9 +9,6 @@ void tri(int n){
         for(i=0; i<2*j-1; i++){ //imprime a quantidade de *, que é simplesmente o jº impar dos naturais
             printf("*");
         }
-        for(i=0; i<n-j; i++){ //Imprime, a direita, a quantidade de espacos necessarios
-            printf(" ");
-        }
         printf("\n");
     }
 }
