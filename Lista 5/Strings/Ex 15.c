@@ -77,7 +77,7 @@ char menu(char op){
     printf("f) Contar quantas vezes um caractere aparece na string;\n");
     printf("g) Substituir a primeira ocorrencia de um caractere da string por outro;\n");
     printf("h) Verificar se um conjunto de caracteres faz parte da string;\n");
-    printf("i) Imprimir uma parte da string;\n");
+    printf("i) Guarde uma parte da string;\n");
     printf("j) Sair;\n\n");
     fflush(stdin);
     scanf("%c", &op);
