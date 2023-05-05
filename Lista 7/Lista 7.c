@@ -8,9 +8,13 @@ int main(){
     fgets(frase, 200, stdin);
     len=strlen(frase)-1; //Removendo o \n como um caractere
     for(i=0, k=0; i<len; i++, k++){
-        if(frase[k]=='r'&&(frase[k+1]>='a'&&frase[k+1]<='z')||(frase[k+1]>='A'&&frase[k+1]<='Z')){ //se achar um r, e a proxima letra for uma letra
-            copy[i]='l';
-            if(frase[k+1]=='r'){ //se tiver dois r's seguidos
+        if((frase[k]=='r'||frase[k]=='R')&&((frase[k+1]>='a'&&frase[k+1]<='z')||(frase[k+1]>='A'&&frase[k+1]<='Z'))){ //se achar um r, e a proxima letra for uma letra
+            if(frase[k]=='r'){
+                copy[i]='l';
+            }else if(frase[k]=='R'){
+                copy[i]='L';
+            }
+            if(frase[k+1]=='r'||frase[k+1]=='R'){ //se tiver dois r's seguidos
                 k++; //Pula esse caractere na próxima execução
             }
         } else{
