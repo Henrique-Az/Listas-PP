@@ -9,5 +9,5 @@ struct data{
 struct compromisso{
     struct data;
     struct hora;
-    char teto[100];
+    char texto[100];
 };
